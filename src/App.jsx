@@ -21,6 +21,8 @@ function App() {
         <H1> the Wild Oasis </H1>;
         <Button onClick={() => alert("Chick in")}> Chick in </Button>
         <Button onClick={() => alert("Chick Out")}> Chick out </Button>
+        <Input placeholder="Number of guests" />
+        <Input placeholder="Number of guests" />
       </StyleApp>
     </>
   );
