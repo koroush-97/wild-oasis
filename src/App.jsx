@@ -8,6 +8,10 @@ const H1 = styled.h1`
   font-weight: 600;
   background-color: yellow;
 `;
+const StyleApp = styled.main`
+  background-color: orangered;
+  padding: 20px;
+`;
 
 function App() {
   return (
