@@ -21,7 +21,7 @@ function App() {
             <div>
               <Heading as="h2"> Check in and out </Heading>
               <Button
-                variation="primary"
+                variations="primary"
                 size="medium"
                 onClick={() => alert("Chick in")}
               >
@@ -29,7 +29,7 @@ function App() {
                 Chick in{" "}
               </Button>
               <Button
-                variation="secondary"
+                variations="secondary"
                 size="small"
                 onClick={() => alert("Chick Out")}
               >
