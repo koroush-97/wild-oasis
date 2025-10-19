@@ -15,20 +15,22 @@ function App() {
     <>
       <Globalstyles />
       <StyleApp>
-        <Row type="horizontal">
-          <Heading as="h1"> the Wild Oasis </Heading>
-          <div>
-            <Heading as="h2"> Check in and out </Heading>
-            <Button onClick={() => alert("Chick in")}> Chick in </Button>
-            <Button onClick={() => alert("Chick Out")}> Chick out </Button>
-          </div>
-        </Row>
-        <Row type="vertical">
-          <Heading as="h3"> Form </Heading>
-          <form>
-            <Input placeholder="Number of guests" />
-            <Input placeholder="Number of guests" />
-          </form>
+        <Row>
+          <Row type="horizontal">
+            <Heading as="h1"> the Wild Oasis </Heading>
+            <div>
+              <Heading as="h2"> Check in and out </Heading>
+              <Button onClick={() => alert("Chick in")}> Chick in </Button>
+              <Button onClick={() => alert("Chick Out")}> Chick out </Button>
+            </div>
+          </Row>
+          <Row>
+            <Heading as="h3"> Form </Heading>
+            <form>
+              <Input placeholder="Number of guests" />
+              <Input placeholder="Number of guests" />
+            </form>
+          </Row>
         </Row>
       </StyleApp>
     </>
