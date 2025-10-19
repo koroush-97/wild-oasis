@@ -48,7 +48,7 @@ const variations = {
   `,
 };
 
-export const Button = styled.button`
+const Button = styled.button`
   font-size: 1.4rem;
   padding: 1.2rem 1.6rem;
   font-weight: 500;
@@ -59,3 +59,5 @@ export const Button = styled.button`
   box-shadow: var(--shadow-sm);
   cursor: pointer;
 `;
+
+export default Button;
