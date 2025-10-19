@@ -17,7 +17,11 @@ function App() {
   return (
     <>
       <Globalstyles />
-      <div>Hello world</div>;
+      <StyleApp>
+        <H1> the Wild Oasis </H1>;
+        <Button onClick={() => alert("Chick in")}> Chick in </Button>
+        <Button onClick={() => alert("Chick Out")}> Chick out </Button>
+      </StyleApp>
     </>
   );
 }
