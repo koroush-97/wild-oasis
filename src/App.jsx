@@ -30,7 +30,7 @@ function App() {
               </Button>
               <Button
                 variations="secondary"
-                size="small"
+                size="medium"
                 onClick={() => alert("Chick Out")}
               >
                 {" "}
