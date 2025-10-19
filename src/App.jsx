@@ -1,4 +1,5 @@
 import Globalstyles from "./styles/GlobalStyle";
+import Button from "./ui/Button";
 
 function App() {
   return (
