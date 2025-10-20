@@ -20,14 +20,7 @@ function App() {
             <Heading as="h1"> the Wild Oasis </Heading>
             <div>
               <Heading as="h2"> Check in and out </Heading>
-              <Button
-                variations="primary"
-                size="medium"
-                onClick={() => alert("Chick in")}
-              >
-                {" "}
-                Chick in{" "}
-              </Button>
+              <Button onClick={() => alert("Chick in")}> Chick in </Button>
               <Button
                 variations="secondary"
                 size="medium"
