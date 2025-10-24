@@ -1,5 +1,5 @@
 // @TANSTACKQUERY
-import { QueryClient } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // Global styles
 import GlobalStyles from "./styles/GlobalStyle";
@@ -26,7 +26,7 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -43,7 +43,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   );
 }
 
