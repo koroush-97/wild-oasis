@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteCabin } from "../../services/apiCabins";
 import { id } from "date-fns/locale";
 
@@ -53,8 +53,11 @@ function CabinRow({ cabin }) {
     image,
   } = cabin;
 
+  const queryClient = useQueryClient();
+
   const { isPending: isDeleting, mutate } = useMutation({
     mutationFn: deleteCabin,
+    onSuccess: () => {},
   });
 
   return (
