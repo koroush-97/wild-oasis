@@ -5,6 +5,7 @@ import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
+import { useForm } from "react-hook-form";
 
 const FormRow = styled.div`
   display: grid;
@@ -43,16 +44,18 @@ const Error = styled.span`
 `;
 
 function CreateCabinForm() {
+  const { register, handleSubmit } = useForm();
+
   return (
     <Form>
       <FormRow>
         <Label htmlFor="name">Cabin name</Label>
-        <Input type="text" id="name" />
+        <Input type="text" id="name" {...register("name")} />
       </FormRow>
 
       <FormRow>
         <Label htmlFor="maxCapacity">Maximum capacity</Label>
-        <Input type="number" id="maxCapacity" />
+        <Input type="number" id="maxCapacity" {...register("maxCapacity")} />
       </FormRow>
 
       <FormRow>
