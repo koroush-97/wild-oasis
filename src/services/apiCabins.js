@@ -12,9 +12,14 @@ export async function getCabins() {
 }
 
 export async function createCabin(newCabin) {
-  const { data, error } = await supabase
-    .from("cabins")
-    .insert([{ some_column: "someValue", other_column: "otherValue" }]);
+  const { data, error } = await supabase.from("cabins").insert([newCabin]);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabins could not be created");
+  }
+
+  return data;
 }
 
 export async function deleteCabin(id) {
