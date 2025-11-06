@@ -8,6 +8,7 @@ import Textarea from "../../ui/Textarea";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { createCabin } from "../../services/apiCabins";
+import toast from "react-hot-toast";
 
 const FormRow = styled.div`
   display: grid;
@@ -48,6 +49,9 @@ const Error = styled.span`
 function CreateCabinForm() {
   const { mutate, isPending } = useMutation({
     mutationFn: createCabin,
+    onSuccess: () => {
+      toast.success("New cabin successfully created");
+    },
   });
   const { register, handleSubmit } = useForm();
 
