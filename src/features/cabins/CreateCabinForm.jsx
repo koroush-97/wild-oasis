@@ -10,6 +10,7 @@ import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 
 import { useCreateCabin } from "./useCreateCabin";
+import { createEditCabin } from "../../services/apiCabins";
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editID, ...editValues } = cabinToEdit;
@@ -23,6 +24,16 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const queryClient = useQueryClient();
 
   const { isCreating, createCabin } = useCreateCabin();
+
+  const { mutate: editCabin, isPending: isEditing } = useMutation({
+    mutationFn: ({ newCabinData, id }) => createEditCabin(newCabinData, id),
+    onSuccess: () => {
+      toast.success("Cabin successfully edited");
+      queryClient.invalidateQueries({ queryKey: ["cabin"] });
+      reset();
+    },
+    onError: (err) => toast.error(err.message),
+  });
 
   function onSubmit(data) {
     console.log(data);
