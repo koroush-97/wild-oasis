@@ -18,17 +18,22 @@ export async function createEditCabin(newCabin, id) {
 
   // https://vdclfcjrdmwrsxpeihhw.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg
 
-  // 1. Create cabin
+  // 1. Create/edit cabin
 
   let query = supabase.from("cabins");
 
-  if (!id)
-    query
-      .insert([{ ...newCabin, image: imagePath }])
-      .select()
-      .single();
+  //  A ) CREATE
+  if (!id) query.insert([{ ...newCabin, image: imagePath }]);
 
-  const { data, error } = await query;
+  // B ) EDIT
+  if (id) {
+    query
+      .update({ other_column: "otherValue" })
+      .eq("some_column", "someValue")
+      .select();
+  }
+
+  const { data, error } = await query.select().single();
 
   if (error) {
     console.error(error);
