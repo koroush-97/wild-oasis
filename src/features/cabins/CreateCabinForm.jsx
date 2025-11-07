@@ -130,7 +130,6 @@ function CreateCabinForm() {
 
       <FormRow
         label="Description for website"
-        disabled={isCreating}
         error={errors?.description?.message}
       >
         <Textarea
