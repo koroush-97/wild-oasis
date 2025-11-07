@@ -25,6 +25,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const { isCreating, createCabin } = useCreateCabin();
 
   function onSubmit(data) {
+    console.log(data);
     // mutate({ ...data, image: data.image[0] });
   }
 
