@@ -15,7 +15,11 @@ import { useCreateCabin } from "./useCreateCabin";
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editID, ...editValues } = cabinToEdit;
-  const { register, handleSubmit, reset, getValues, formState } = useForm();
+  const isEditSession = Boolean(editID);
+
+  const { register, handleSubmit, reset, getValues, formState } = useForm({
+    defaultValues: isEditSession ? editValues : {},
+  });
   const { errors } = formState;
 
   const queryClient = useQueryClient();
