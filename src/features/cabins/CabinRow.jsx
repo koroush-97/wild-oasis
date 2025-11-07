@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
 
 import useDeleteCabin from "./useDeleteCabin";
+import { useState } from "react";
 
 const TableRow = styled.div`
   display: grid;
@@ -42,6 +43,7 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 function CabinRow({ cabin }) {
+  const [showForm, setShowForm] = useState(false);
   const {
     id: cabinId,
     name,
@@ -65,9 +67,12 @@ function CabinRow({ cabin }) {
       ) : (
         <span>&mdash;</span>
       )}
-      <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
-        Delete
-      </button>
+      <div>
+        <button onClick={() => setShowForm((show) => !show)}> Edit </button>
+        <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
+          Delete
+        </button>
+      </div>
     </TableRow>
   );
 }
