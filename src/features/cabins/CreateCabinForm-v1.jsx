@@ -13,8 +13,7 @@ import { createCabin } from "../../services/apiCabins";
 
 import { useCreateCabin } from "./useCreateCabin";
 
-function CreateCabinForm({ cabinToEdit = {} }) {
-  const { id: editID, ...editValues } = cabinToEdit;
+function CreateCabinForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
   const { errors } = formState;
 
