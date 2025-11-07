@@ -1,19 +1,39 @@
+// import { useMutation, useQueryClient } from "@tanstack/react-query";
+// import { deleteCabin as deleteCabinApi } from "../../services/apiCabins";
+// import toast from "react-hot-toast";
+
+// export default function useDeleteCabin() {
+//   const queryClient = useQueryClient();
+
+//   const { isPending: isDeleting, mutate: deleteCabinApi } = useMutation({
+//     mutationFn: deleteCabinApi,
+//     onSuccess: () => {
+//       toast.success("Cabin successfully deleted");
+
+//       queryClient.invalidateQueries({
+//         queryKey: ["cabin"],
+//       });
+//     },
+//     onError: (err) => toast.error(err.message),
+//   });
+
+//   return { isDeleting, deleteCabin };
+// }
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { deleteCabin } from "../../services/apiCabins";
+import { deleteCabin as deleteCabinApi } from "../../services/apiCabins";
 import toast from "react-hot-toast";
 
 export default function useDeleteCabin() {
   const queryClient = useQueryClient();
 
-  const { isPending: isDeleting, mutate } = useMutation({
-    mutationFn: deleteCabin,
+  const { isPending: isDeleting, mutate: deleteCabin } = useMutation({
+    mutationFn: deleteCabinApi,
     onSuccess: () => {
       toast.success("Cabin successfully deleted");
-
-      queryClient.invalidateQueries({
-        queryKey: ["cabin"],
-      });
+      queryClient.invalidateQueries({ queryKey: ["cabin"] });
     },
     onError: (err) => toast.error(err.message),
   });
+
+  return { isDeleting, deleteCabin };
 }
