@@ -42,7 +42,13 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
     if (isEditSession)
       editCabin({ newCabinData: { ...data, image }, id: editID });
-    else createCabin({ ...data, image: image });
+    else
+      createCabin(
+        { ...data, image: image },
+        {
+          onSuccess: (data) => reset(),
+        }
+      );
   }
 
   function onError(errors) {
