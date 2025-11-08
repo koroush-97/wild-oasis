@@ -21,9 +21,9 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   });
   const { errors } = formState;
 
-  const queryClient = useQueryClient();
-
   const { isCreating, createCabin } = useCreateCabin();
+
+  const queryClient = useQueryClient();
 
   const { mutate: editCabin, isPending: isEditing } = useMutation({
     mutationFn: ({ newCabinData, id }) => createEditCabin(newCabinData, id),
