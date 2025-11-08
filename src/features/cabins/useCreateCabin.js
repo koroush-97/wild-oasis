@@ -14,5 +14,5 @@ export function useCreateCabin() {
     onError: (err) => toast.error(err.message),
   });
 
-  return { isCreating, createEditCabin };
+  return { isCreating, createCabin: mutate };
 }
