@@ -49,15 +49,15 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
-
-function Modal({ children }) {
+// eslint-disable-next-line react/prop-types
+function Modal({ children, onClose }) {
   return (
     <Overlay>
       <StyledModal>
-        <Button>
+        <Button onClick={onClose}>
           <HiXMark />
-        </Button>{" "}
-        <div>{children}</div>{" "}
+        </Button>
+        <div>{children}</div>
       </StyledModal>
     </Overlay>
   );
