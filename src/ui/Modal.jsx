@@ -1,3 +1,4 @@
+import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 
 const StyledModal = styled.div`
@@ -53,7 +54,9 @@ function Modal({ children }) {
   return (
     <Overlay>
       <StyledModal>
-        {" "}
+        <Button>
+          <HiXMark />
+        </Button>{" "}
         <div>{children}</div>{" "}
       </StyledModal>
     </Overlay>
