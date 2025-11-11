@@ -32,12 +32,12 @@ function AddCabin() {
         <CreateCabinForm />
       </Modal.Window>
 
-      <Modal.Open>
+      {/* <Modal.Open opens="table">
         <Button> Show table </Button>
       </Modal.Open>
-      <Modal.Window>
+      <Modal.Window name="table">
         <CreateCabinForm />
-      </Modal.Window>
+      </Modal.Window> */}
     </Modal>
   );
 }
