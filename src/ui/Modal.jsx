@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -61,6 +61,12 @@ function Modal({ children }) {
   const open = setOpenName();
 }
 
+function Open({ children, opens }) {
+  const { open } = useContext(ModalContext);
+
+  return children;
+}
+
 // eslint-disable-next-line react/prop-types
 function Window({ children, onClose }) {
   return createPortal(
@@ -75,5 +81,8 @@ function Window({ children, onClose }) {
     document.body
   );
 }
+
+Modal.Open = Open;
+Modal.Window = Window;
 
 export default Modal;
