@@ -19,7 +19,7 @@ const StyledConfirmDelete = styled.div`
     gap: 1.2rem;
   }
 `;
-
+// eslint-disable-next-line react/prop-types
 function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
   return (
     <StyledConfirmDelete>
