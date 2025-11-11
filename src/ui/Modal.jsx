@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { createPortal } from "react-dom";
@@ -82,20 +83,29 @@ function Open({ children, opens: openWindowName }) {
 // eslint-disable-next-line react/prop-types
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
+  const ref = useRef();
 
-  useEffect(function () {
-    function handleClick(e) {}
+  useEffect(
+    function () {
+      function handleClick(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          console.log("click outside");
+          close();
+        }
+      }
 
-    document.addEventListener("click", handleClick);
+      document.addEventListener("click", handleClick);
 
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
+      return () => document.removeEventListener("click", handleClick);
+    },
+    [close]
+  );
 
   if (name !== openName) return null;
 
   return createPortal(
     <Overlay>
-      <StyledModal>
+      <StyledModal ref={ref}>
         <Button onClick={close}>
           <HiXMark />
         </Button>
