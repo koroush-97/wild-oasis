@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -64,7 +64,7 @@ function Modal({ children }) {
 function Open({ children, opens }) {
   const { open } = useContext(ModalContext);
 
-  return children;
+  return cloneElement(children, { onClick: () => open(opens) });
 }
 
 // eslint-disable-next-line react/prop-types
