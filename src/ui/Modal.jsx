@@ -1,4 +1,10 @@
-import { cloneElement, createContext, useContext, useState } from "react";
+import {
+  cloneElement,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -76,6 +82,15 @@ function Open({ children, opens: openWindowName }) {
 // eslint-disable-next-line react/prop-types
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
+
+  useEffect(function () {
+    function handleClick(e) {}
+
+    document.addEventListener("click", handleClick);
+
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
   if (name !== openName) return null;
 
   return createPortal(
