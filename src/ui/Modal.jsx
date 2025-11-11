@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -50,8 +51,15 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+const ModalContext = createContext();
+
+function Modal({ children }) {
+  const [openName, setOpenName] = useState("");
+}
+
 // eslint-disable-next-line react/prop-types
-function Modal({ children, onClose }) {
+function Window({ children, onClose }) {
   return createPortal(
     <Overlay>
       <StyledModal>
