@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import styled from "styled-components";
 
 const StyledTable = styled.div`
@@ -70,7 +70,14 @@ function Table({ columns, children }) {
   );
 }
 
-function Header({ children }) {}
+function Header({ children }) {
+  const { columns } = useContext(TableContext);
+  return (
+    <StyledHeader role="row" columns={columns}>
+      {children}
+    </StyledHeader>
+  );
+}
 function Row({ children }) {}
 function Body({ children }) {}
 
