@@ -107,7 +107,9 @@ function List({ id, children }) {
   const ref = useOutsideClick(close);
   if (openId !== id) return null;
   return createPortal(
-    <StyledList position={position}>{children}</StyledList>,
+    <StyledList position={position} ref={ref}>
+      {children}
+    </StyledList>,
     document.body
   );
 }
