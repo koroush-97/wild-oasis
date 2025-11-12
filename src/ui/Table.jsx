@@ -59,6 +59,15 @@ const Empty = styled.p`
   margin: 2.4rem;
 `;
 
-function Table() {}
+function Table({ columns, children }) {}
+
+function Header({ children }) {}
+function Row({ children }) {}
+function Body({ children }) {}
+
+Table.Header = Header;
+Table.Body = Body;
+Table.Row = Row;
+Table.Footer = Footer;
 
 export default Table;
