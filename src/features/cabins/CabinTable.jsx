@@ -43,8 +43,9 @@ function CabinTable() {
   const sortBy = searchParams.get("sortBy") || "startDate-asc";
   const [field, direction] = sortBy.split("-");
   const modifier = direction === "asc" ? 1 : -1;
-  const sortedCabins =
-    filterCabins.sort((a, b) => a[field] - b[field]) * modifier;
+  const sortedCabins = filterCabins.sort(
+    (a, b) => (a[field] - b[field]) * modifier
+  );
 
   return (
     <Menus>
@@ -59,7 +60,8 @@ function CabinTable() {
         </TableHeader>
         <Table.Body
           // data={cabins}
-          data={filterCabins}
+          // data={filterCabins}
+          data={sortedCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
