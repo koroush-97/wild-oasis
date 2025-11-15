@@ -1,10 +1,12 @@
-import { TbTableOptions } from "react-icons/tb";
+import TableOperations from "../../ui/TableOperations";
 import Filter from "../../ui/Filter";
 
-export default function CabinTableOperations() {
+function CabinTableOperations() {
   return (
-    <TbTableOptions>
+    <TableOperations>
       <Filter />
-    </TbTableOptions>
+    </TableOperations>
   );
 }
+
+export default CabinTableOperations;
