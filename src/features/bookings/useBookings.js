@@ -8,7 +8,6 @@ export function useBookings() {
     error,
   } = useQuery({
     queryKey: ["bookings"],
-    // queryFn: getBooking,
     queryFn: getBookings,
   });
 
