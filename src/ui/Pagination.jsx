@@ -58,6 +58,8 @@ const PaginationButton = styled.button`
   }
 `;
 
+const PAGE_SIZE = 10;
+
 function Pagination({ count }) {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -65,7 +67,14 @@ function Pagination({ count }) {
     ? 1
     : Number(searchParams.get("page"));
 
-  function nextPage() {}
+  const pageCount = Math.ceil(count / PAGE_SIZE);
+
+  function nextPage() {
+    const next = currentPage === pageCount ? currentPage : currentPage + 1;
+
+    searchParams.set("page", next);
+    searchParams(searchParams);
+  }
 
   function prevPage() {}
 
