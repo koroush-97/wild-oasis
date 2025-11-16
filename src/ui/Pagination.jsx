@@ -73,13 +73,15 @@ function Pagination({ count }) {
     const next = currentPage === pageCount ? currentPage : currentPage + 1;
 
     searchParams.set("page", next);
-    searchParams(searchParams);
+    setSearchParams(searchParams);
+    console.log("next page");
   }
 
   function prevPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
     searchParams.set("page", prev);
-    searchParams(searchParams);
+    setSearchParams(searchParams);
+    console.log("prev page");
   }
 
   return (
@@ -90,10 +92,10 @@ function Pagination({ count }) {
       </p>
 
       <Buttons>
-        <PaginationButton>
+        <PaginationButton onClick={prevPage}>
           <HiChevronLeft /> <span>Previous</span>
         </PaginationButton>
-        <PaginationButton>
+        <PaginationButton onClick={nextPage}>
           <span>Next</span>
           <HiChevronRight />
         </PaginationButton>
