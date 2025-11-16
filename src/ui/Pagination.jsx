@@ -1,3 +1,4 @@
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import styled from "styled-components";
 
 const StyledPagination = styled.div`
@@ -62,6 +63,16 @@ function Pagination() {
       <p>
         Showing <span>1</span> to <span>10</span> of <span> 23 </span> results
       </p>
+
+      <Buttons>
+        <PaginationButton>
+          <HiChevronLeft /> <span>Previous</span>
+        </PaginationButton>
+        <PaginationButton>
+          <span>Next</span>
+          <HiChevronRight />
+        </PaginationButton>
+      </Buttons>
     </StyledPagination>
   );
 }
