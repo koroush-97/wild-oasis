@@ -76,7 +76,11 @@ function Pagination({ count }) {
     searchParams(searchParams);
   }
 
-  function prevPage() {}
+  function prevPage() {
+    const prev = currentPage === 1 ? currentPage : currentPage - 1;
+    searchParams.set("page", prev);
+    searchParams(searchParams);
+  }
 
   return (
     <StyledPagination>
