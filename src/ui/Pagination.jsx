@@ -55,3 +55,11 @@ const PaginationButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+function Pagination() {
+  return (
+    <StyledPagination>
+      <p>Showing</p>
+    </StyledPagination>
+  );
+}
