@@ -74,28 +74,29 @@ function Pagination({ count }) {
 
     searchParams.set("page", next);
     setSearchParams(searchParams);
-    console.log("next page");
   }
 
   function prevPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
     searchParams.set("page", prev);
     setSearchParams(searchParams);
-    console.log("prev page");
   }
 
   return (
     <StyledPagination>
       <p>
-        Showing <span>1</span> to <span>{count}</span> of <span> 23 </span>{" "}
+        Showing <span>1</span> to <span>10</span> of <span> {count} </span>{" "}
         results
       </p>
 
       <Buttons>
-        <PaginationButton onClick={prevPage}>
+        <PaginationButton onClick={prevPage} disabled={currentPage === 1}>
           <HiChevronLeft /> <span>Previous</span>
         </PaginationButton>
-        <PaginationButton onClick={nextPage}>
+        <PaginationButton
+          onClick={nextPage}
+          disabled={currentPage === pageCount}
+        >
           <span>Next</span>
           <HiChevronRight />
         </PaginationButton>
