@@ -24,7 +24,7 @@ export function useBookings() {
     data: bookings,
     error,
   } = useQuery({
-    queryKey: ["bookings", filter],
+    queryKey: ["bookings", filter, sortBy],
     queryFn: () => getBookings({ filter, sortBy }),
   });
 
