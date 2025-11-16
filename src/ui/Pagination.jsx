@@ -59,7 +59,10 @@ const PaginationButton = styled.button`
 function Pagination() {
   return (
     <StyledPagination>
-      <p>Showing</p>
+      <p>
+        Showing <span>1</span> to <span>10</span> of <span> 23 </span> results
+      </p>
     </StyledPagination>
   );
 }
+export default Pagination;
