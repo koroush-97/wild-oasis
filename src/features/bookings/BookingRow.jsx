@@ -129,7 +129,7 @@ function BookingRow({
           </Menus.List>
         </Menus.Menu>
         <Modal.Window name="delete">
-          <ConfirmDelete />
+          <ConfirmDelete resourceName="booking" onConfirm={() => {}} />
         </Modal.Window>
       </Modal>
     </Table.Row>
