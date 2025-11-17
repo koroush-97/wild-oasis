@@ -42,7 +42,7 @@ function BookingDetail() {
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>
 
-      {/* <BookingDataBox booking={booking} /> */}
+      <BookingDataBox booking={booking} />
 
       <ButtonGroup>
         <Button variation="secondary" onClick={moveBack}>
