@@ -1,3 +1,33 @@
+// import { useMutation, useQueryClient } from "@tanstack/react-query";
+// import { updateBooking } from "../../services/apiBookings";
+// import toast from "react-hot-toast";
+// import { useNavigate } from "react-router-dom";
+
+// function useCheckin() {
+//   const queryClient = useQueryClient();
+//   const navigate = useNavigate();
+
+//   const { mutate: checkin, isLoading: isChekingIn } = useMutation({
+//     mutationFn: (bookingId, breakfast) =>
+//       updateBooking(bookingId, {
+//         status: "checked-in",
+//         isPaid: true,
+//         ...breakfast,
+//       }),
+
+//     onSuccess: (data) => {
+//       toast.success(`Booking # ${data.id} successfully checked in `);
+//       queryClient.invalidateQueries({ acttive: true });
+//       navigate("/");
+//     },
+
+//     onError: () => toast.error("There was an error while checking in"),
+//   });
+
+//   return { checkin, isChekingIn };
+// }
+
+// export default useCheckin;
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateBooking } from "../../services/apiBookings";
 import toast from "react-hot-toast";
@@ -7,8 +37,8 @@ function useCheckin() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const { mutate: checkin, isLoading: isChekingIn } = useMutation({
-    mutationFn: (bookingId, breakfast) =>
+  const { mutate: checkin, isLoading: isCheckingIn } = useMutation({
+    mutationFn: ({ bookingId, breakfast }) =>
       updateBooking(bookingId, {
         status: "checked-in",
         isPaid: true,
@@ -16,15 +46,15 @@ function useCheckin() {
       }),
 
     onSuccess: (data) => {
-      toast.success(`Booking # ${data.id} successfully checked in `);
-      queryClient.invalidateQueries({ acttive: true });
+      toast.success(`Booking #${data.id} successfully checked in`);
+      queryClient.invalidateQueries({ active: true });
       navigate("/");
     },
 
     onError: () => toast.error("There was an error while checking in"),
   });
 
-  return { checkin, isChekingIn };
+  return { checkin, isCheckingIn };
 }
 
 export default useCheckin;
