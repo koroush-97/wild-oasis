@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "../../ui/Checkbox";
 import { formatCurrency } from "../../utils/helpers";
 import useCheckin from "./useCheckin";
+import { useSettings } from "../settings/useSetting";
 
 const Box = styled.div`
   /* Box */
@@ -27,6 +28,7 @@ function CheckinBooking() {
   const [confirmPaid, setConfirmPaid] = useState(false);
   const [addBreakfast, setAddBreakfast] = useState(false);
   const { booking, isLoading } = useBooking();
+  const { settings, isLoading: isLoadingSettings } = useSettings();
 
   useEffect(() => {
     setConfirmPaid(booking?.isPaid ?? false);
@@ -46,6 +48,12 @@ function CheckinBooking() {
     numNights,
   } = booking;
 
+  // const optionalBreakfastPrice =
+  //   settings.breakfastPrice * numNights * numGuests;
+
+  const optionalBreakfastPrice =
+    (settings?.breakfastPrice ?? 0) * numNights * numGuests;
+
   function handleCheckin() {
     if (!confirmPaid) return;
     checkin(bookingId);
@@ -60,20 +68,22 @@ function CheckinBooking() {
 
       <BookingDataBox booking={booking} />
 
-      <Box>
-        <Checkbox
-          checked={addBreakfast}
-          onChange={() => {
-            setAddBreakfast((add) => !add);
-            setConfirmPaid(false);
-          }}
-          id="breakfast"
-        >
-          {" "}
-          Want to add breaksast for X?{" "}
-        </Checkbox>
-      </Box>
-
+      {!hasBreakfast && (
+        <Box>
+          <Checkbox
+            checked={addBreakfast}
+            onChange={() => {
+              setAddBreakfast((add) => !add);
+              setConfirmPaid(false);
+            }}
+            id="breakfast"
+          >
+            {" "}
+            {/* Want to add breaksast for {optionalBreakfastPrice}?{" "} */}
+            Want to add breakfast for {formatCurrency(optionalBreakfastPrice)}?
+          </Checkbox>
+        </Box>
+      )}
       <Box>
         <Checkbox
           checked={confirmPaid}
