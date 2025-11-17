@@ -40,10 +40,21 @@ function Filter({ filterField, options }) {
 
   const currentFlter = searchParams.get(filterField) || options.at(0).value;
 
+  // function handleClick(value) {
+  //   const newParams = new URLSearchParams(searchParams);
+  //   newParams.set(filterField, value);
+  //   if (searchParams.get("page")) searchParams.set("page", 1);
+  //   setSearchParams(newParams);
+  // }
+
   function handleClick(value) {
     const newParams = new URLSearchParams(searchParams);
     newParams.set(filterField, value);
-    if (searchParams.get("page")) searchParams.set("page", 1);
+
+    if (searchParams.get("page")) {
+      newParams.set("page", 1); // ✔ درستش اینه
+    }
+
     setSearchParams(newParams);
   }
 
