@@ -10,7 +10,7 @@ import ButtonText from "../../ui/ButtonText";
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "../bookings/useBooking";
 import Spinner from "../../ui/Spinner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkbox from "../../ui/Checkbox";
 
 const Box = styled.div`
@@ -22,9 +22,14 @@ const Box = styled.div`
 `;
 
 function CheckinBooking() {
-  const [confirmPaid, setConfirmPaid] = useState();
+  const [confirmPaid, setConfirmPaid] = useState(false);
 
   const { booking, isLoading } = useBooking();
+
+  useEffect(() => {
+    setConfirmPaid(booking?.isPaid ?? false);
+  }, [booking?.isPaid]);
+
   const moveBack = useMoveBack();
 
   if (isLoading) return <Spinner />;
