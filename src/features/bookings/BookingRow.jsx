@@ -5,10 +5,16 @@ import Tag from "../../ui/Tag";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
 
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
-import { HiArrowDownOnSquare, HiArrowUpOnSquare, HiEye } from "react-icons/hi2";
+import {
+  HiArrowDownOnSquare,
+  HiArrowUpOnSquare,
+  HiEye,
+  HiTrash,
+} from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import useCheckout from "../check-in-out/useCheckout";
 
@@ -116,8 +122,15 @@ function BookingRow({
                 Check out
               </Menus.Button>
             )}
+
+            <Modal.Open opens="delete">
+              <Menus.Button icon={<HiTrash />}> Delete booking </Menus.Button>
+            </Modal.Open>
           </Menus.List>
         </Menus.Menu>
+        <Modal.Window name="delete">
+          <ConfirmDelete />
+        </Modal.Window>
       </Modal>
     </Table.Row>
   );
