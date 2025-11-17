@@ -105,10 +105,7 @@ function BookingRow({
           )}
 
           {status === "checked-in" && (
-            <Menus.Button
-              icon={<HiArrowUpOnSquare />}
-              onClick={() => console.log("thats worked")}
-            >
+            <Menus.Button icon={<HiArrowUpOnSquare />} onClick={() => {}}>
               Check out
             </Menus.Button>
           )}
