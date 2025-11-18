@@ -14,7 +14,12 @@ function ProtectedRoute({ children }) {
   // 1. Load the authenticated user
   const { user, isLoading } = useUser();
   // 2.While loading , show a spinner
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <FullPage>
+        <Spinner />;
+      </FullPage>
+    );
   // 3.If there is NO authenticated
 
   // 4. If there Is a user , render the app
