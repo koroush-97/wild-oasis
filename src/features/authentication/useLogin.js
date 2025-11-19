@@ -13,10 +13,7 @@ function useLogin() {
         email,
         password,
       }),
-    // onSuccess: (user) => {
-    //   queryClient.setQueriesData(["user"], user);
-    //   navigate("/dashboard");
-    // },
+
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], {
         ...user,
