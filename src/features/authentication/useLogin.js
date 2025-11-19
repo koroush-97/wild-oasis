@@ -19,7 +19,7 @@ function useLogin() {
         ...user,
         role: user?.role || "authenticated",
       });
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
       console.log("ERROR", err);
