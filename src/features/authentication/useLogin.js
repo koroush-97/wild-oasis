@@ -15,6 +15,8 @@ function useLogin() {
       }),
 
     onSuccess: (user) => {
+      console.log(user);
+
       queryClient.setQueryData(["user"], {
         ...user,
         role: user?.role || "authenticated",
