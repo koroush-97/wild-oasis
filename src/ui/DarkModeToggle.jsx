@@ -6,8 +6,8 @@ function DarkModeToggle() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <ButtonIcon>
-      <HiOutlineMoon />
+    <ButtonIcon onClick={toggleDarkMode}>
+      {isDarkMode ? <HiOutlineSun /> : <HiOutlineMoon />}
     </ButtonIcon>
   );
 }
