@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
 import Heading from "../../ui/Heading";
-import useDarkMode from "../../context/DarkModeContext";
+import { useDarkMode } from "../../context/DarkModeContext";
 import {
   Area,
   AreaChart,
@@ -77,15 +77,26 @@ export default function SalesChart() {
 
       <ResponsiveContainer height={300} width="100%">
         <AreaChart data={fakeData}>
-          <XAxis dataKey="label" />
-          <YAxis unit="$" />
+          <XAxis
+            dataKey="label"
+            tick={{ fill: colors.text }}
+            tickLine={{ stroke: colors.text }}
+          />
+          <YAxis
+            unit="$"
+            tick={{ fill: colors.text }}
+            tickLine={{ stroke: colors.text }}
+          />
           <CartesianGrid strokeDasharray="4" />
-          <Tooltip />
+          <Tooltip contentStyle={{ backgroundColor: colors.background }} />
           <Area
             dataKey="totalSales"
             type="monotone"
-            stroke="red"
-            fill="orange"
+            stroke={colors.totalSales.stroke}
+            fill={colors.totalSales.fill}
+            strokeWidth={2}
+            name="Total sales"
+            unit="$"
           />
         </AreaChart>
       </ResponsiveContainer>
