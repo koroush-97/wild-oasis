@@ -5,6 +5,7 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -71,13 +72,21 @@ export default function SalesChart() {
   return (
     <StyledSalesChart>
       <Heading as="h2">Sales</Heading>
-      <AreaChart data={fakeData} height={300} width={700}>
-        <XAxis dataKey="label" />
-        <YAxis unit="$" />
-        <CartesianGrid />
-        <Tooltip />
-        <Area dataKey="totalSales" type="monotone" stroke="red" fill="orange" />
-      </AreaChart>
+
+      <ResponsiveContainer height={300} width="100%">
+        <AreaChart data={fakeData}>
+          <XAxis dataKey="label" />
+          <YAxis unit="$" />
+          <CartesianGrid strokeDasharray="4" />
+          <Tooltip />
+          <Area
+            dataKey="totalSales"
+            type="monotone"
+            stroke="red"
+            fill="orange"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </StyledSalesChart>
   );
 }
