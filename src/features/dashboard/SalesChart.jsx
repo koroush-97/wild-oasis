@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
 import Heading from "../../ui/Heading";
+import { Area, AreaChart, CartesianGrid } from "recharts";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -63,6 +64,11 @@ export default function SalesChart() {
   return (
     <StyledSalesChart>
       <Heading as="h2">Sales</Heading>
+
+      <AreaChart data={fakeData} height={300} width={700}>
+        <CartesianGrid />
+        <Area dataKey="totalSales" type="monotone" stroke="red" fill="orange" />
+      </AreaChart>
     </StyledSalesChart>
   );
 }
