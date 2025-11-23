@@ -4,7 +4,9 @@ import { HiOutlineBanknotes, HiOutlineCalendarDays } from "react-icons/hi2";
 
 function Stats({ bookings, confirmedStays }) {
   // 1.
-  const numBookings = bookings.lenght;
+  const numBookings = bookings.length;
+
+  console.log(bookings);
 
   return (
     <>
