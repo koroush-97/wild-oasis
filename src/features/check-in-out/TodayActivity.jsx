@@ -38,7 +38,7 @@ const NoActivity = styled.p`
 `;
 
 function TodayActivity() {
-  const { stays, isLoading } = useTodayActivity();
+  const { activities, isLoading } = useTodayActivity();
 
   return (
     <StyledToday>
@@ -47,7 +47,7 @@ function TodayActivity() {
       </Row>
 
       {!isLoading ? (
-        stays?.length > 0 ? (
+        activities?.length > 0 ? (
           <TodayList></TodayList>
         ) : (
           <NoActivity>No activity today...</NoActivity>
