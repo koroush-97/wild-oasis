@@ -13,13 +13,14 @@ Overall, The Wild Oasis is a well-structured, production-ready React application
 
 🛠️ Tech Stack & Tools
 
-![React](https://img.shields.io/badge/%20-?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=00000000&color=00000000)
-![JavaScript](https://img.shields.io/badge/%20-?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=00000000&color=00000000)
-![Vite](https://img.shields.io/badge/%20-?style=for-the-badge&logo=vite&logoColor=646CFF&labelColor=00000000&color=00000000)
-![Supabase](https://img.shields.io/badge/%20-?style=for-the-badge&logo=supabase&logoColor=3ECF8E&labelColor=00000000&color=00000000)
-![ReactQuery](https://img.shields.io/badge/%20-?style=for-the-badge&logo=reactquery&logoColor=FF4154&labelColor=00000000&color=00000000)
-![ReactRouter](https://img.shields.io/badge/%20-?style=for-the-badge&logo=reactrouter&logoColor=CA4245&labelColor=00000000&color=00000000)
-![StyledComponents](https://img.shields.io/badge/%20-?style=for-the-badge&logo=styledcomponents&logoColor=DB7093&labelColor=00000000&color=00000000)
-![ESLint](https://img.shields.io/badge/%20-?style=for-the-badge&logo=eslint&logoColor=4B32C3&labelColor=00000000&color=00000000)
-![Recharts](https://img.shields.io/badge/%20-?style=for-the-badge&logo=recharts&logoColor=00C3FF&labelColor=00000000&color=00000000)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![React Query](https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-DD0031?style=for-the-badge&logo=reactrouter&logoColor=white)
+![Styled Components](https://img.shields.io/badge/Styled_Components-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-00C3FF?style=for-the-badge&logo=recharts&logoColor=white)
+
 
