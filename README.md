@@ -9,13 +9,17 @@ The interface is styled using Styled Components, giving the project a scalable a
 Additionally, the dashboard includes visual data insights using Recharts, making it easy for administrators to understand performance trends and analytics at a glance. The development environment is kept clean with a full ESLint setup alongside vite-plugin-eslint, ensuring high code quality throughout the project.
 
 Overall, The Wild Oasis is a well-structured, production-ready React application that demonstrates modern best practices, modular architecture, and strong integration with cloud services. It’s suitable both as a real-life admin tool and as a portfolio project showcasing professional-level front-end engineering.
+
+
 🛠️ Tech Stack & Tools
-![React](https://img.shields.io/badge/-?style=for-the-badge&logo=react&logoColor=61DAFB)
-![JavaScript](https://img.shields.io/badge/-?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![Vite](https://img.shields.io/badge/-?style=for-the-badge&logo=vite&logoColor=646CFF)
-![Supabase](https://img.shields.io/badge/-?style=for-the-badge&logo=supabase&logoColor=3ECF8E)
-![React Query](https://img.shields.io/badge/-?style=for-the-badge&logo=reactquery&logoColor=FF4154)
-![React Router](https://img.shields.io/badge/-?style=for-the-badge&logo=reactrouter&logoColor=CA4245)
-![Styled Components](https://img.shields.io/badge/-?style=for-the-badge&logo=styledcomponents&logoColor=DB7093)
-![ESLint](https://img.shields.io/badge/-?style=for-the-badge&logo=eslint&logoColor=4B32C3)
-![Recharts](https://img.shields.io/badge/-?style=for-the-badge&logo=recharts&logoColor=00C3FF)
+
+![React](https://img.shields.io/badge/%20-?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=00000000&color=00000000)
+![JavaScript](https://img.shields.io/badge/%20-?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=00000000&color=00000000)
+![Vite](https://img.shields.io/badge/%20-?style=for-the-badge&logo=vite&logoColor=646CFF&labelColor=00000000&color=00000000)
+![Supabase](https://img.shields.io/badge/%20-?style=for-the-badge&logo=supabase&logoColor=3ECF8E&labelColor=00000000&color=00000000)
+![ReactQuery](https://img.shields.io/badge/%20-?style=for-the-badge&logo=reactquery&logoColor=FF4154&labelColor=00000000&color=00000000)
+![ReactRouter](https://img.shields.io/badge/%20-?style=for-the-badge&logo=reactrouter&logoColor=CA4245&labelColor=00000000&color=00000000)
+![StyledComponents](https://img.shields.io/badge/%20-?style=for-the-badge&logo=styledcomponents&logoColor=DB7093&labelColor=00000000&color=00000000)
+![ESLint](https://img.shields.io/badge/%20-?style=for-the-badge&logo=eslint&logoColor=4B32C3&labelColor=00000000&color=00000000)
+![Recharts](https://img.shields.io/badge/%20-?style=for-the-badge&logo=recharts&logoColor=00C3FF&labelColor=00000000&color=00000000)
+
