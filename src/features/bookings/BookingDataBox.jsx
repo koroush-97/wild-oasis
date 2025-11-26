@@ -119,8 +119,7 @@ function BookingDataBox({ booking }) {
     endDate,
     numNights,
     numGuests,
-    cabinPrice,
-    extrasPrice,
+
     totalPrice,
     hasBreakfast,
     observations,
